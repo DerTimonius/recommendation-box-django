@@ -1,7 +1,6 @@
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-import sys
 import json
 import os
 
@@ -13,7 +12,7 @@ complete_path = os.path.join(current_path, dir_name, filename)
 df_combined = pd.read_csv(complete_path)
 df_combined.drop(["index"], axis=1, inplace=True)
 
-def add_score_to_df( index, df,cosine_similarity_matrix):
+def add_score_to_df(index, df,cosine_similarity_matrix):
   """
   get the score of each movie (or show) in comparison to the input index and sort it accordingly.
   afterwards add the score and the index to the dataframe and return both
