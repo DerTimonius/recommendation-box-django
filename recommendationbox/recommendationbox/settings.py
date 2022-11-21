@@ -29,7 +29,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["0.0.0.0", "https://recommendation-box.fly.dev"]
+ALLOWED_HOSTS = ["0.0.0.0", "https://recommendation-box.fly.dev", "django-api.fly.dev"]
 
 
 # Application definition
