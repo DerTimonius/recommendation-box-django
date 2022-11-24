@@ -1,0 +1,9 @@
+venv/
+.env
+README.md
+.git
+.github
+Dockerfile
+.dockerignore
+
+generate_secret.py

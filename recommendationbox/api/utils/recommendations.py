@@ -60,7 +60,7 @@ def get_best_movie_rec(movie_input_id_list, number_of_movies, options, preferenc
   cosine_similarity_matrix_count_based = cosine_similarity(vect_matrix, vect_matrix)
   # takes a list of movie/show ids, calls a function to create a list of differnt versions of the dataframe to compare the scores later.
   combined_df_list = [add_score_to_df(int(movie), checked_df, cosine_similarity_matrix_count_based) for movie in movie_input_id_list]
-  # also, creates a list of the 6 most similar movies/shows, later deleting the first one, since that will always be the initial movie
+  # also, creates a list of the 20 most similar movies/shows, later deleting the first one, since that will always be the initial movie
   combined_top_list = [combined_df_list[i].head(20)["index"].tolist() for i in range(len(combined_df_list))]
   total_scores = []
   combined_top_list_flattened = []
@@ -85,7 +85,7 @@ def get_best_movie_rec(movie_input_id_list, number_of_movies, options, preferenc
       total_scores.append({"movie_id": movie, "total_score": total_score})
     else:
       continue
-  # sort the movies according to their total score and return the top 3 in JSON format, so it can be read with JS later
+  # sort the movies according to their total score and return them in JSON format
   top_movies = sorted(total_scores, key=lambda x: x["total_score"], reverse=True)
   top_movies_list = [df_combined.iloc[top_movies[i]["movie_id"]] for i in range(int(number_of_movies))]
   output = [{"title": top_movies_list[i]["title"], "listed_in": top_movies_list[i]["listed_in"], "director": str(top_movies_list[i]["director"]), "release_year": int(top_movies_list[i]["release_year"]), "type": top_movies_list[i]["type"], "description":top_movies_list[i]["description"], "cast": str(top_movies_list[i]["cast"])} for i in range(int(number_of_movies))]
