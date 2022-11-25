@@ -9,6 +9,11 @@ This little API holds the magic for my [recommendation box project](https://gith
 - Scikit-learn
 - Django
 
+## Overview
+
+To get a quick overview on how this recommendation system is working, please consult this schema:
+![Drawing of the functionality](/schema/excalidraw.png)
+
 ## Deployment
 
 This API was deployed on [fly.io](https://fly.io) with a dockerized image.
