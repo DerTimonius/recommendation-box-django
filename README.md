@@ -1,3 +1,5 @@
+### The server for the API has been taken offline, so if you have to clone this repo to use it locally!
+
 # Django API for recommendation box
 
 This little API holds the magic for my [recommendation box project](https://github.com/DerTimonius/recommendation-box). Here, the recommendation system will take action if the API is called as well as the search functionality of the project.
